@@ -1,5 +1,5 @@
 package com.devsuperior.dspesquisa.entities.enums;
 
 public enum Platform {
-	PC, PLASTATION, XOBX;
+	PC, PLAYSTATION, XBOX;
 }
