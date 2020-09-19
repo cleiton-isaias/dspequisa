@@ -2,18 +2,23 @@ import React from 'react';
 import { FontAwesome5 as Icon } from '@expo/vector-icons'
 import { Text, StyleSheet, View, Image, Alert } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-
+import Header from '../../components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
 
-  const handleOnPress = () =>{
+  const navigation = useNavigation();
 
-    Alert.alert('Você clicou no botão!');
+  const handleOnPress = () => {
+
+    navigation.navigate('CreateRecord');
 
   }
 
   return (
     <>
+      <Header />
+
       <View style={styles.container}>
         <Image
           source={require('../../assets/gamer.png')}
@@ -24,14 +29,14 @@ const Home = () => {
 
       </View>
 
-      <View style= {styles.footer}>
+      <View style={styles.footer}>
         <RectButton style={styles.button} onPress={handleOnPress}>
           <Text style={styles.buttonText}>
             COLETAR DADOS
           </Text>
           <View style={styles.buttonIcon}>
             <Text>
-              <Icon name="chevron-right" color="#FFF" size={25}/>
+              <Icon name="chevron-right" color="#FFF" size={25} />
             </Text>
           </View>
         </RectButton>
@@ -59,22 +64,22 @@ const styles = StyleSheet.create({
     fontFamily: "Play_700Bold",
   },
   subTitle: {
-                color: '#ED7947',
+    color: '#ED7947',
     fontSize: 21,
     marginTop: 15,
     fontFamily: "Play_400Regular",
   },
   footer: {
-                marginTop: '15%',
+    marginTop: '15%',
     alignItems: 'center'
   },
   button: {
-                backgroundColor: '#00D4FF',
+    backgroundColor: '#00D4FF',
     flexDirection: 'row',
     borderRadius: 10
   },
   buttonIcon: {
-                backgroundColor: '#ED7947',
+    backgroundColor: '#ED7947',
     justifyContent: 'center',
     alignItems: 'center',
     width: 50,
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10
   },
   buttonText: {
-                paddingTop: 15,
+    paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 50,
     paddingRight: 50,
