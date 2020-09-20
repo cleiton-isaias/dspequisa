@@ -21,7 +21,7 @@ const initialPieData = {
     series: []
 }
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://sds1-cleiton.herokuapp.com';
 
 const Charts = () => {
     
@@ -56,13 +56,12 @@ const Charts = () => {
                     <h1 className="top-related-title">
                         Jogos mais votados
                     </h1>
-                    <div className="games-conainer">
+                    <div className="games-container">
                         < Chart
                             options={barOptions}
                             type="bar"
-                            //Nos monitores estavam ultrapassando o container
-                            //width="900"
-                            //height="350"
+                            height="650"
+                            width="600"                        
                             series={[{ data: barChartData }]}
                         />
                     </div>
